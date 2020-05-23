@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 0 20px;
+}
+
+.main {
+  padding: 50px 0;
+}
