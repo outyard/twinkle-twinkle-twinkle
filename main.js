@@ -33,9 +33,6 @@ function generateMoreNotes(notes) {
   }
 }
 
-document.querySelector('#notes').innerHTML = '' + notes;
-
-
 let noteIndex = 0;
 
 document.querySelector('button').addEventListener('click', () => {
@@ -55,6 +52,19 @@ function play() {
   oscillator.frequency.value = note.frequency;
   oscillator.type = 'triangle';
   oscillator.connect(context.destination);
+
+  let notesText = document.querySelector('#notes');
+  notesText.innerHTML = '';
+  for (let i = 0; i < notes.length; ++i) {
+    if (noteIndex === i) {
+      notesText.innerHTML += '<span style="background: yellow">' + notes[i] + '</span>';
+    } else {
+      notesText.innerHTML += notes[i];
+    }
+    if (i < notes.length - 1) {
+      notesText.innerHTML += ' ';
+    }
+  }
 
   ++noteIndex;
   setTimeout(function() {
